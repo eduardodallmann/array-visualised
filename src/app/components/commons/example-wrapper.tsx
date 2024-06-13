@@ -1,6 +1,24 @@
-import type { PropsWithChildren, ReactNode } from 'react';
+'use client';
+
+import {
+  createContext,
+  useContext,
+  useState,
+  type PropsWithChildren,
+  type ReactNode,
+} from 'react';
 
 import { Arrow } from './arrow';
+
+export const ItemContext = createContext<{
+  item: string;
+  setItem: (item: string) => void;
+  removeItem: () => void;
+}>({
+  item: 'default',
+  setItem: () => {},
+  removeItem: () => {},
+});
 
 export function ExampleWrapper({
   explanation,
@@ -13,17 +31,24 @@ export function ExampleWrapper({
   center?: ReactNode;
   right: ReactNode;
 }>) {
+  const [item, setItem] = useState<string>('');
+  const removeItem = () => setItem('');
+
   return (
-    <div className="mb-2">
-      {explanation && (
-        <div className="text-white text-base font-thin mb-1">{explanation}</div>
-      )}
-      <div className="flex justify-between">
-        <ExampleItem size="big">{left}</ExampleItem>
-        <ExampleItem size="small">{center}</ExampleItem>
-        <ExampleItem>{right}</ExampleItem>
+    <ItemContext.Provider value={{ item, setItem, removeItem }}>
+      <div className="mb-2">
+        {explanation && (
+          <div className="text-white text-base font-thin mb-1">
+            {explanation}
+          </div>
+        )}
+        <div className="flex justify-between">
+          <ExampleItem size="big">{left}</ExampleItem>
+          <ExampleItem size="small">{center}</ExampleItem>
+          <ExampleItem>{right}</ExampleItem>
+        </div>
       </div>
-    </div>
+    </ItemContext.Provider>
   );
 }
 
@@ -39,3 +64,5 @@ function ExampleItem({
 
   return <div className={`${flex[size]} min-w-0 box-border`}>{children}</div>;
 }
+
+export const useItem = () => useContext(ItemContext);

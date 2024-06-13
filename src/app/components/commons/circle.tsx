@@ -1,12 +1,16 @@
-export enum Colors {
-  red = 'bg-red-500',
-  green = 'bg-green-400',
-  blue = 'bg-blue-500',
-  purple = 'bg-purple-500',
-  //   yellow = 'bg-yellow-500',
-  orange = 'bg-orange-500',
-}
+'use client';
 
-export function Circle({ color }: { color: Colors }) {
-  return <div className={`w-8 h-8 rounded-full ${color}`} />;
+import type { CircleType } from './circle.types';
+import { useItem } from './example-wrapper';
+
+export function Circle({ id, color }: CircleType) {
+  const { item, setItem, removeItem } = useItem();
+
+  return (
+    <div
+      className={`w-8 h-8 rounded-full ${color} ${item === id ? 'animate-pulse' : ''}`}
+      onMouseEnter={() => setItem(id)}
+      onMouseLeave={removeItem}
+    />
+  );
 }
