@@ -1,5 +1,6 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { Arrow } from '../commons/arrow';
 import { Colors } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
@@ -16,16 +17,14 @@ popResult1.pop();
 export function Pop() {
   return (
     <>
-      <ExampleWrapper
-        explanation="Pop: Remove o último elemento do array e retorna o item removido."
-        left={
-          <ArrayFunctionBlockWrapper>
-            <ArrayBlock itens={pop1} />
-            <FunctionBlock functionName="pop" itens={[]} />
-          </ArrayFunctionBlockWrapper>
-        }
-        right={<ArrayBlock itens={popResult1} />}
-      />
+      <ExampleWrapper explanation="Pop: Remove o último elemento do array e retorna o item removido.">
+        <ArrayFunctionBlockWrapper>
+          <ArrayBlock itens={pop1} showBreak />
+          <FunctionBlock functionName="pop" itens={[]} />
+        </ArrayFunctionBlockWrapper>
+        <Arrow />
+        <ArrayBlock itens={popResult1} />
+      </ExampleWrapper>
     </>
   );
 }

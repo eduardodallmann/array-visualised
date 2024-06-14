@@ -1,5 +1,6 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { Arrow } from '../commons/arrow';
 import { Colors } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
@@ -16,16 +17,14 @@ shiftResult1.shift();
 export function Shift() {
   return (
     <>
-      <ExampleWrapper
-        explanation="Shift: Remove o primeiro elemento do array e retorna o item removido."
-        left={
-          <ArrayFunctionBlockWrapper>
-            <ArrayBlock itens={shift1} />
-            <FunctionBlock functionName="shift" itens={[]} />
-          </ArrayFunctionBlockWrapper>
-        }
-        right={<ArrayBlock itens={shiftResult1} />}
-      />
+      <ExampleWrapper explanation="Shift: Remove o primeiro elemento do array e retorna o item removido.">
+        <ArrayFunctionBlockWrapper>
+          <ArrayBlock itens={shift1} showBreak />
+          <FunctionBlock functionName="shift" itens={[]} />
+        </ArrayFunctionBlockWrapper>
+        <Arrow />
+        <ArrayBlock itens={shiftResult1} />
+      </ExampleWrapper>
     </>
   );
 }

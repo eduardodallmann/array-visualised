@@ -9,12 +9,12 @@ export function FunctionBlock({
   itens: Array<CircleType>;
 }) {
   return (
-    <div className=" flex flex-row items-center text-white text-3xl font-medium">
+    <div className="flex flex-row items-center text-white lg:text-3xl md:text-xl text-lg font-medium md:ml-0 ml-4">
       .{functionName}(
       {itens.map(({ color, id }, index) => (
         <>
           <Circle key={index} color={color} id={id} />
-          {index < itens.length - 1 && ', '}
+          {index < itens.length - 1 && ','}
         </>
       ))}
       )

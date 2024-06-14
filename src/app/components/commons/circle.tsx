@@ -8,7 +8,7 @@ export function Circle({ id, color }: CircleType) {
 
   return (
     <div
-      className={`w-8 h-8 rounded-full ${color} ${item === id ? 'animate-pulse' : ''}`}
+      className={`lg:w-8 lg:h-8 md:h-6 md:w-6 h-5 w-5 rounded-full ${color} ${item === id ? 'animate-pulse' : ''}`}
       onMouseEnter={() => setItem(id)}
       onMouseLeave={removeItem}
     />

@@ -1,5 +1,6 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { Arrow } from '../commons/arrow';
 import { Colors } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
@@ -25,26 +26,23 @@ pushResult2.push(...pushParam2);
 export function Push() {
   return (
     <>
-      <ExampleWrapper
-        explanation="Push: Adiciona um ou mais elementos ao final do array e retorna o novo comprimento."
-        left={
-          <ArrayFunctionBlockWrapper>
-            <ArrayBlock itens={push1} />
-            <FunctionBlock functionName="push" itens={pushParam1} />
-          </ArrayFunctionBlockWrapper>
-        }
-        right={<ArrayBlock itens={pushResult1} />}
-      />
+      <ExampleWrapper explanation="Push: Adiciona um ou mais elementos ao final do array e retorna o novo comprimento.">
+        <ArrayFunctionBlockWrapper>
+          <ArrayBlock itens={push1} showBreak />
+          <FunctionBlock functionName="push" itens={pushParam1} />
+        </ArrayFunctionBlockWrapper>
+        <Arrow />
+        <ArrayBlock itens={pushResult1} />
+      </ExampleWrapper>
 
-      <ExampleWrapper
-        left={
-          <ArrayFunctionBlockWrapper>
-            <ArrayBlock itens={push2} />
-            <FunctionBlock functionName="push" itens={pushParam2} />
-          </ArrayFunctionBlockWrapper>
-        }
-        right={<ArrayBlock itens={pushResult2} />}
-      />
+      <ExampleWrapper>
+        <ArrayFunctionBlockWrapper>
+          <ArrayBlock itens={push2} showBreak />
+          <FunctionBlock functionName="push" itens={pushParam2} />
+        </ArrayFunctionBlockWrapper>
+        <Arrow />
+        <ArrayBlock itens={pushResult2} />
+      </ExampleWrapper>
     </>
   );
 }

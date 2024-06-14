@@ -1,5 +1,6 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { Arrow } from '../commons/arrow';
 import { Colors } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
@@ -25,26 +26,23 @@ unshiftResult2.unshift(...unshiftParam2);
 export function Unshift() {
   return (
     <>
-      <ExampleWrapper
-        explanation="Unshift: Adiciona um ou mais elementos ao início do array e retorna o novo comprimento."
-        left={
-          <ArrayFunctionBlockWrapper>
-            <ArrayBlock itens={unshift1} />
-            <FunctionBlock functionName="unshift" itens={unshiftParam1} />
-          </ArrayFunctionBlockWrapper>
-        }
-        right={<ArrayBlock itens={unshiftResult1} />}
-      />
+      <ExampleWrapper explanation="Unshift: Adiciona um ou mais elementos ao início do array e retorna o novo comprimento.">
+        <ArrayFunctionBlockWrapper>
+          <ArrayBlock itens={unshift1} showBreak />
+          <FunctionBlock functionName="unshift" itens={unshiftParam1} />
+        </ArrayFunctionBlockWrapper>
+        <Arrow />
+        <ArrayBlock itens={unshiftResult1} />
+      </ExampleWrapper>
 
-      <ExampleWrapper
-        left={
-          <ArrayFunctionBlockWrapper>
-            <ArrayBlock itens={unshift2} />
-            <FunctionBlock functionName="unshift" itens={unshiftParam2} />
-          </ArrayFunctionBlockWrapper>
-        }
-        right={<ArrayBlock itens={unshiftResult2} />}
-      />
+      <ExampleWrapper>
+        <ArrayFunctionBlockWrapper>
+          <ArrayBlock itens={unshift2} showBreak />
+          <FunctionBlock functionName="unshift" itens={unshiftParam2} />
+        </ArrayFunctionBlockWrapper>
+        <Arrow />
+        <ArrayBlock itens={unshiftResult2} />
+      </ExampleWrapper>
     </>
   );
 }

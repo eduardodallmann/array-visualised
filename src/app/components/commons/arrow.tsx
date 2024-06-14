@@ -1,13 +1,8 @@
 export function Arrow() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      version="1.1"
-      width="80"
-      height="48"
+      className="lg:w-[80px] lg:h-[48px] md:w-[50px] md:h-[30px] w-[40px] h-[25px]"
       viewBox="0 38 256 180"
-      xmlSpace="preserve"
     >
       <defs />
       <g
