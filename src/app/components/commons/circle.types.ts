@@ -5,6 +5,6 @@ export enum Colors {
   green = 'bg-green-400',
   blue = 'bg-blue-500',
   purple = 'bg-purple-500',
-  //   yellow = 'bg-yellow-500',
+  yellow = 'bg-yellow-500',
   orange = 'bg-orange-500',
 }
