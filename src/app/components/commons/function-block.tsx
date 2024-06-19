@@ -1,27 +1,7 @@
-import { Fragment, type ReactNode } from 'react';
+import { Fragment } from 'react';
 
 import { Circle } from './circle';
-import type { CircleType } from './circle.types';
-
-type CircleElement = CircleType & {
-  element?: never;
-};
-
-type ElementWithType = {
-  id: string;
-  element: ReactNode;
-  color?: never;
-};
-
-export type FunctionBlockType = CircleElement | ElementWithType;
-
-export function elementGuard(item: FunctionBlockType): item is ElementWithType {
-  return (item as ElementWithType).element !== undefined;
-}
-
-export function circleGuard(item: FunctionBlockType): item is CircleElement {
-  return (item as CircleElement).color !== undefined;
-}
+import type { FunctionBlockType } from './types';
 
 export function FunctionBlock({
   functionName,

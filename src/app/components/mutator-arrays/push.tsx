@@ -1,15 +1,11 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
 import { Arrow } from '../commons/arrow';
-import { Colors, type CircleType } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
-import {
-  circleGuard,
-  FunctionBlock,
-  type FunctionBlockType,
-} from '../commons/function-block';
+import { FunctionBlock } from '../commons/function-block';
+import { Colors, type FunctionBlockType } from '../commons/types';
 
-const push1: Array<CircleType> = [
+const push1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.orange },
@@ -38,7 +34,7 @@ export function Push() {
           <FunctionBlock functionName="push" itens={pushParam1} />
         </ArrayFunctionBlockWrapper>
         <Arrow />
-        <ArrayBlock itens={pushResult1.filter(circleGuard)} />
+        <ArrayBlock itens={pushResult1} />
       </ExampleWrapper>
 
       <ExampleWrapper>
@@ -47,7 +43,7 @@ export function Push() {
           <FunctionBlock functionName="push" itens={pushParam2} />
         </ArrayFunctionBlockWrapper>
         <Arrow />
-        <ArrayBlock itens={pushResult2.filter(circleGuard)} />
+        <ArrayBlock itens={pushResult2} />
       </ExampleWrapper>
     </>
   );

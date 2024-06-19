@@ -1,15 +1,11 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
 import { Arrow } from '../commons/arrow';
-import { Colors, type CircleType } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
-import {
-  circleGuard,
-  FunctionBlock,
-  type FunctionBlockType,
-} from '../commons/function-block';
+import { FunctionBlock } from '../commons/function-block';
+import { Colors, type FunctionBlockType } from '../commons/types';
 
-const splice1: Array<CircleType> = [
+const splice1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.red },
   { id: crypto.randomUUID(), color: Colors.green },
@@ -35,7 +31,7 @@ const spliceParam2: Array<FunctionBlockType> = [
 const spliceResult2: Array<FunctionBlockType> = [...splice1];
 spliceResult2.splice(2, 0, ...spliceParam2);
 
-const splice3: Array<CircleType> = [
+const splice3: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.red },
   { id: crypto.randomUUID(), color: Colors.green },
@@ -47,7 +43,7 @@ const spliceParam3: Array<FunctionBlockType> = [
 const spliceResult3: Array<FunctionBlockType> = [...splice3];
 spliceResult3.splice(1, 1);
 
-const splice4: Array<CircleType> = [
+const splice4: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.red },
   { id: crypto.randomUUID(), color: Colors.green },
@@ -71,7 +67,7 @@ export function Splice() {
           <FunctionBlock functionName="splice" itens={spliceParam1} />
         </ArrayFunctionBlockWrapper>
         <Arrow />
-        <ArrayBlock itens={spliceResult1.filter(circleGuard)} />
+        <ArrayBlock itens={spliceResult1} />
       </ExampleWrapper>
 
       <ExampleWrapper>
@@ -80,7 +76,7 @@ export function Splice() {
           <FunctionBlock functionName="splice" itens={spliceParam2} />
         </ArrayFunctionBlockWrapper>
         <Arrow />
-        <ArrayBlock itens={spliceResult2.filter(circleGuard)} />
+        <ArrayBlock itens={spliceResult2} />
       </ExampleWrapper>
 
       <ExampleWrapper>
@@ -89,7 +85,7 @@ export function Splice() {
           <FunctionBlock functionName="splice" itens={spliceParam3} />
         </ArrayFunctionBlockWrapper>
         <Arrow />
-        <ArrayBlock itens={spliceResult3.filter(circleGuard)} />
+        <ArrayBlock itens={spliceResult3} />
       </ExampleWrapper>
 
       <ExampleWrapper>
@@ -98,7 +94,7 @@ export function Splice() {
           <FunctionBlock functionName="splice" itens={spliceParam4} />
         </ArrayFunctionBlockWrapper>
         <Arrow />
-        <ArrayBlock itens={spliceResult4.filter(circleGuard)} />
+        <ArrayBlock itens={spliceResult4} />
       </ExampleWrapper>
     </>
   );

@@ -1,11 +1,11 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
 import { Arrow } from '../commons/arrow';
-import { Colors, type CircleType } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
+import { Colors, type FunctionBlockType } from '../commons/types';
 
-const pop1: Array<CircleType> = [
+const pop1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.purple },
   { id: crypto.randomUUID(), color: Colors.red },

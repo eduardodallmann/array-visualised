@@ -1,7 +1,7 @@
 'use client';
 
-import type { CircleType } from './circle.types';
 import { useItem } from './example-wrapper';
+import type { CircleType } from './types';
 
 export function Circle({ id, color }: CircleType) {
   const { item, setItem, removeItem } = useItem();

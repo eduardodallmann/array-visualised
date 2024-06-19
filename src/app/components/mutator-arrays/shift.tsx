@@ -1,9 +1,9 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
 import { Arrow } from '../commons/arrow';
-import { Colors } from '../commons/circle.types';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
+import { Colors } from '../commons/types';
 
 const shift1 = [
   { id: crypto.randomUUID(), color: Colors.orange },
