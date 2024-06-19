@@ -29,7 +29,7 @@ const spliceParam2: Array<FunctionBlockType> = [
   newItem2b,
 ];
 const spliceResult2: Array<FunctionBlockType> = [...splice1];
-spliceResult2.splice(2, 0, ...spliceParam2);
+spliceResult2.splice(2, 0, newItem2a, newItem2b);
 
 const splice3: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
