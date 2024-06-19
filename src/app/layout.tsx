@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 
-import { PageWrapper } from './components/commons/page-wrapper';
-
 import './globals.css';
+
+import { PageWrapper } from '~/components/commons/page-wrapper';
 
 export const dynamic = 'force-static';
 
