@@ -13,8 +13,8 @@ export function ArrayBlock({
     <div className="flex items-center lg:gap-2 gap-1 font-bold lg:text-5xl md:text-3xl text-2xl text-white">
       <div>[</div>
       <div className="flex flex-row lg:gap-2 gap-1">
-        {itens.map(({ color, id }) => (
-          <Circle key={id} color={color} id={id} />
+        {itens.map(({ color, id }, index) => (
+          <Circle key={index} color={color} id={id} />
         ))}
       </div>
       <div>]</div>
