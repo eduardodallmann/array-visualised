@@ -8,6 +8,10 @@ import {
   type ReactNode,
 } from 'react';
 
+import { useModal } from '~/context/modal';
+
+import { RunIcon } from './icons/run';
+
 export const ItemContext = createContext<{
   item: string;
   setItem: (item: string) => void;
@@ -20,19 +24,23 @@ export const ItemContext = createContext<{
 
 export function ExampleWrapper({
   explanation,
+  code = '',
   children: [left, center, right],
 }: {
   explanation?: string;
+  code?: string;
   children: [ReactNode, ReactNode, ReactNode];
 }) {
   const [item, setItem] = useState<string>('');
   const removeItem = () => setItem('');
+  const { showCode } = useModal();
 
   return (
     <ItemContext.Provider value={{ item, setItem, removeItem }}>
       <div className="mb-2">
         {explanation && (
-          <div className="text-white md:text-base text-sm text-justify font-thin mb-1">
+          <div className="flex gap-2 items-center text-white md:text-base text-sm text-justify font-thin mb-1">
+            {code && <RunIcon click={() => showCode(code)} />}
             {explanation}
           </div>
         )}

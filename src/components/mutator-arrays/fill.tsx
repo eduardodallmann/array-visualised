@@ -1,9 +1,23 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
-import { Arrow } from '../commons/arrow';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
+import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
+
+const code = `const array1 = [1, 2, 3, 4];
+
+// Preencher com 0 da posição 2 até a posição 4
+console.log(array1.fill(0, 2, 4));
+// Saída esperada: Array [1, 2, 0, 0]
+
+// Preencher com 5 da posição 1
+console.log(array1.fill(5, 1));
+// Saída esperada: Array [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// Saída esperada: Array [6, 6, 6, 6]
+`;
 
 const fill1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
@@ -38,7 +52,10 @@ fillResult3.fill(fillParam3[0], 2, 4);
 export function Fill() {
   return (
     <>
-      <ExampleWrapper explanation="Fill: Preenche todos os elementos do array a partir do índice de início até o índice de fim com um valor estático.">
+      <ExampleWrapper
+        explanation="Fill: Preenche todos os elementos do array a partir do índice de início até o índice de fim com um valor estático."
+        code={code}
+      >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={fill1} showBreak />
           <FunctionBlock functionName="fill" itens={fillParam1} />

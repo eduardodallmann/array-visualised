@@ -1,9 +1,9 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
-import { Arrow } from '../commons/arrow';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { FunctionIcon } from '../commons/function-icon';
+import { Arrow } from '../commons/icons/arrow';
+import { FunctionIcon } from '../commons/icons/function-icon';
 import type { FunctionBlockType } from '../commons/types';
 
 const sort1: Array<FunctionBlockType> = [

@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
-import { ArrowBreak } from './arrow-break';
 import { Circle } from './circle';
+import { ArrowBreak } from './icons/arrow-break';
 import type { FunctionBlockType } from './types';
 
 export function ArrayBlock({
