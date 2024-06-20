@@ -5,6 +5,19 @@ import { FunctionBlock } from '../commons/function-block';
 import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
+const code = `const animais = ['porcos', 'cabras', 'ovelhas'];
+
+const quantidade = animais.push('vacas');
+console.log(quantidade);
+// Saída esperada: 4
+console.log(animais);
+// Saída esperada: porcos, cabras, ovelhas, vacas
+
+animais.push('galinhas', 'gatos', 'cachorros');
+console.log(animais);
+// Saída esperada: porcos, cabras, ovelhas, vacas, galinhas, gatos, cachorros
+`;
+
 const push1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.orange },
@@ -28,7 +41,10 @@ pushResult2.push(...pushParam2);
 export function Push() {
   return (
     <>
-      <ExampleWrapper explanation="Push: Adiciona um ou mais elementos ao final do array e retorna o novo comprimento.">
+      <ExampleWrapper
+        explanation="Push: Adiciona um ou mais elementos ao final do array e retorna o novo comprimento."
+        code={code}
+      >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={push1} showBreak />
           <FunctionBlock functionName="push" itens={pushParam1} />

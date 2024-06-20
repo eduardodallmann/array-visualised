@@ -9,14 +9,14 @@ const code = `const array1 = [1, 2, 3, 4];
 
 // Preencher com 0 da posição 2 até a posição 4
 console.log(array1.fill(0, 2, 4));
-// Saída esperada: Array [1, 2, 0, 0]
+// Saída esperada: 1, 2, 0, 0
 
 // Preencher com 5 da posição 1
 console.log(array1.fill(5, 1));
-// Saída esperada: Array [1, 5, 5, 5]
+// Saída esperada: 1, 5, 5, 5
 
 console.log(array1.fill(6));
-// Saída esperada: Array [6, 6, 6, 6]
+// Saída esperada: 6, 6, 6, 6
 `;
 
 const fill1: Array<FunctionBlockType> = [

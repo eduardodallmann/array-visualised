@@ -11,7 +11,9 @@ export function Runner({ code = '' }: { code: string | undefined }) {
     const originalConsoleLog = console.log;
 
     console.log = function (...args) {
-      logs.push(`> ${args.join(' ')}`);
+      logs.push(
+        `> ${args.map((e) => (Array.isArray(e) ? e.join(', ') : e)).join(' ')}`,
+      );
       originalConsoleLog.apply(console, args);
     };
 

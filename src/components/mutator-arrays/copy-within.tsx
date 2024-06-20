@@ -5,6 +5,17 @@ import { FunctionBlock } from '../commons/function-block';
 import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
+const code = `const array1 = ['a', 'b', 'c', 'd', 'e'];
+
+// Copiar para o índice 0 o elemento no índice 3
+console.log(array1.copyWithin(0, 3, 4));
+// Saída esperada: d, b, c, d, e
+
+// Copiar para o índice 1 todos os elementos do índice 3 até o final
+console.log(array1.copyWithin(1, 3));
+// Saída esperada: d, d, e, d, e
+`;
+
 const copyWithin1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.blue },
@@ -31,7 +42,10 @@ copyWithinResult2.copyWithin(1, 3);
 export function CopyWithin() {
   return (
     <>
-      <ExampleWrapper explanation="CopyWithin: Copia uma sequência de elementos do array para outra posição dentro do mesmo array.">
+      <ExampleWrapper
+        explanation="CopyWithin: Copia uma sequência de elementos do array para outra posição dentro do mesmo array."
+        code={code}
+      >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={copyWithin1} showBreak />
           <FunctionBlock functionName="copyWithin" itens={copyWithinParam1} />

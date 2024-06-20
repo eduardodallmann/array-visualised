@@ -5,6 +5,15 @@ import { FunctionBlock } from '../commons/function-block';
 import { Arrow } from '../commons/icons/arrow';
 import { Colors } from '../commons/types';
 
+const code = `const array1 = [1, 2, 3];
+
+console.log(array1.unshift(4, 5));
+// Saída esperada: 5
+
+console.log(array1);
+// Saída esperada: 4, 5, 1, 2, 3
+`;
+
 const unshift1 = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.orange },
@@ -26,7 +35,10 @@ unshiftResult2.unshift(...unshiftParam2);
 export function Unshift() {
   return (
     <>
-      <ExampleWrapper explanation="Unshift: Adiciona um ou mais elementos ao início do array e retorna o novo comprimento.">
+      <ExampleWrapper
+        explanation="Unshift: Adiciona um ou mais elementos ao início do array e retorna o novo comprimento."
+        code={code}
+      >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={unshift1} showBreak />
           <FunctionBlock functionName="unshift" itens={unshiftParam1} />

@@ -5,6 +5,18 @@ import { FunctionBlock } from '../commons/function-block';
 import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
+const code = `const meses = ['Jan', 'Março', 'Abril', 'Junho'];
+meses.splice(1, 0, 'Fev');
+// Insere no índice 1
+console.log(meses);
+// Saída esperada: Jan, Fev, Março, Abril, Junho
+
+meses.splice(4, 1, 'Maio');
+// Substitui 1 elemento no índice 4
+console.log(meses);
+// Saída esperada: Jan, Fev, Março, Abril, Maio
+`;
+
 const splice1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.red },
@@ -61,7 +73,10 @@ spliceResult4.splice(1, 1, newItem4);
 export function Splice() {
   return (
     <>
-      <ExampleWrapper explanation="Splice: Adiciona ou remove elementos de um array. O primeiro parâmetro é o índice no qual começar a alterar o array. (opcional) O segundo parâmetro indica o número de elementos do array a serem removidos a partir do índice. (opcional) Os próximos parâmetros serão inseridos no array. E retorna um array com os itens excluídos.">
+      <ExampleWrapper
+        explanation="Splice: Adiciona ou remove elementos de um array. O primeiro parâmetro é o índice no qual começar a alterar o array. (opcional) O segundo parâmetro indica o número de elementos do array a serem removidos a partir do índice. (opcional) Os próximos parâmetros serão inseridos no array. E retorna um array com os itens excluídos."
+        code={code}
+      >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={splice1} showBreak />
           <FunctionBlock functionName="splice" itens={spliceParam1} />

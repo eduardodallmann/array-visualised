@@ -6,6 +6,22 @@ import { Arrow } from '../commons/icons/arrow';
 import { FunctionIcon } from '../commons/icons/function-icon';
 import type { FunctionBlockType } from '../commons/types';
 
+const code = `const meses = ['Março', 'Janeiro', 'Fevereiro', 'Dezembro'];
+meses.sort();
+console.log(meses);
+// Saída esperada: Dezembro, Fevereiro, Janeiro, Março
+
+const array1 = [1, 30, 4, 21, 100000];
+array1.sort();
+console.log(array1);
+// Saída esperada: 1, 100000, 21, 30, 4
+
+const array2 = [1, 30, 4, 21, 100000];
+array2.sort((a, b) => b - a);
+console.log(array2);
+// Saída esperada: 100000, 30, 21, 4, 1
+`;
+
 const sort1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), element: 2 },
   { id: crypto.randomUUID(), element: 1 },
@@ -36,7 +52,10 @@ sortResult2.sort(
 export function Sort() {
   return (
     <>
-      <ExampleWrapper explanation="Sort: Ordena os elementos do array automaticamente ou com base em uma função.">
+      <ExampleWrapper
+        explanation="Sort: Ordena os elementos do array automaticamente ou com base em uma função."
+        code={code}
+      >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={sort1} showBreak showComma />
           <FunctionBlock functionName="sort" itens={[]} />

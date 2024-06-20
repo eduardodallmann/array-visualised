@@ -5,6 +5,17 @@ import { FunctionBlock } from '../commons/function-block';
 import { Arrow } from '../commons/icons/arrow';
 import { Colors } from '../commons/types';
 
+const code = `const array1 = [1, 2, 3];
+
+const primeiroElemento = array1.shift();
+
+console.log(array1);
+// Saída esperada: 2, 3
+
+console.log(primeiroElemento);
+// Saída esperada: 1
+`;
+
 const shift1 = [
   { id: crypto.randomUUID(), color: Colors.orange },
   { id: crypto.randomUUID(), color: Colors.purple },
@@ -17,7 +28,10 @@ shiftResult1.shift();
 export function Shift() {
   return (
     <>
-      <ExampleWrapper explanation="Shift: Remove o primeiro elemento do array e retorna o item removido.">
+      <ExampleWrapper
+        explanation="Shift: Remove o primeiro elemento do array e retorna o item removido."
+        code={code}
+      >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={shift1} showBreak />
           <FunctionBlock functionName="shift" itens={[]} />
