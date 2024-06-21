@@ -25,20 +25,20 @@ const indexOf1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.green },
 ];
 const indexOfParam1: Array<FunctionBlockType> = [indexOf1[1]];
-const concatResult1 = indexOf1.indexOf(indexOfParam1[0]);
+const indexOfResult1 = indexOf1.indexOf(indexOfParam1[0]);
 
 const indexOf2: Array<FunctionBlockType> = [...indexOf1, indexOf1[0]];
 const indexOfParam2: Array<FunctionBlockType> = [
   indexOf2[3],
   { id: crypto.randomUUID(), element: 2 },
 ];
-const concatResult2 = indexOf2.indexOf(indexOfParam2[0], 2);
+const indexOfResult2 = indexOf2.indexOf(indexOfParam2[0], 2);
 
 const indexOf3: Array<FunctionBlockType> = [...indexOf1];
 const indexOfParam3: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.yellow },
 ];
-const concatResult3 = indexOf3.indexOf(indexOfParam3[0]);
+const indexOfResult3 = indexOf3.indexOf(indexOfParam3[0]);
 
 export function IndexOf() {
   return (
@@ -51,7 +51,7 @@ export function IndexOf() {
           <ArrayBlock itens={indexOf1} />
           <FunctionBlock functionName="indexOf" itens={indexOfParam1} />
         </ArrayFunctionBlockWrapper>
-        <ResultBlock>{concatResult1}</ResultBlock>
+        <ResultBlock>{indexOfResult1}</ResultBlock>
       </ExampleWrapper>
 
       <ExampleWrapper>
@@ -59,7 +59,7 @@ export function IndexOf() {
           <ArrayBlock itens={indexOf2} />
           <FunctionBlock functionName="indexOf" itens={indexOfParam2} />
         </ArrayFunctionBlockWrapper>
-        <ResultBlock>{concatResult2}</ResultBlock>
+        <ResultBlock>{indexOfResult2}</ResultBlock>
       </ExampleWrapper>
 
       <ExampleWrapper>
@@ -67,7 +67,7 @@ export function IndexOf() {
           <ArrayBlock itens={indexOf3} />
           <FunctionBlock functionName="indexOf" itens={indexOfParam3} />
         </ArrayFunctionBlockWrapper>
-        <ResultBlock>{concatResult3}</ResultBlock>
+        <ResultBlock>{indexOfResult3}</ResultBlock>
       </ExampleWrapper>
     </ExampleContainer>
   );
