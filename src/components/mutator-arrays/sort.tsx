@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { FunctionIcon } from '../commons/icons/function-icon';
 import type { FunctionBlockType } from '../commons/types';
 
@@ -51,27 +51,25 @@ sortResult2.sort(
 
 export function Sort() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="Sort: Ordena os elementos do array automaticamente ou com base em uma função."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={sort1} showBreak showComma />
+          <ArrayBlock itens={sort1} showComma />
           <FunctionBlock functionName="sort" itens={[]} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={sortResult1} showComma />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={sort2} showBreak showComma />
+          <ArrayBlock itens={sort2} showComma />
           <FunctionBlock functionName="sort" itens={sortParam2} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={sortResult2} showComma />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

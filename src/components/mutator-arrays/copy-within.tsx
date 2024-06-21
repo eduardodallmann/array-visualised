@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
 const code = `const array1 = ['a', 'b', 'c', 'd', 'e'];
@@ -41,26 +41,25 @@ copyWithinResult2.copyWithin(1, 3);
 
 export function CopyWithin() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="CopyWithin: Copia uma sequência de elementos do array para outra posição dentro do mesmo array."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={copyWithin1} showBreak />
+          <ArrayBlock itens={copyWithin1} />
           <FunctionBlock functionName="copyWithin" itens={copyWithinParam1} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={copyWithinResult1} />
       </ExampleWrapper>
+
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={copyWithin2} showBreak />
+          <ArrayBlock itens={copyWithin2} />
           <FunctionBlock functionName="copyWithin" itens={pushParam2} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={copyWithinResult2} />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

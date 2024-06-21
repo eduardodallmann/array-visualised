@@ -4,7 +4,7 @@ export function ArrayFunctionBlockWrapper({
   children: [React.ReactNode, React.ReactNode];
 }) {
   return (
-    <div className="flex md:flex-row flex-col md:items-center items-start gap-1">
+    <div className="flex flex-row md:items-center items-start gap-1">
       {first}
       {second}
     </div>

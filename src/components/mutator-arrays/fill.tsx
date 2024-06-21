@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
 const code = `const array1 = [1, 2, 3, 4];
@@ -51,36 +51,33 @@ fillResult3.fill(fillParam3[0], 2, 4);
 
 export function Fill() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="Fill: Preenche todos os elementos do array a partir do índice de início até o índice de fim com um valor estático."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={fill1} showBreak />
+          <ArrayBlock itens={fill1} />
           <FunctionBlock functionName="fill" itens={fillParam1} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={fillResult1} />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={fill2} showBreak />
+          <ArrayBlock itens={fill2} />
           <FunctionBlock functionName="fill" itens={fillParam2} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={fillResult2} />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={fill3} showBreak />
+          <ArrayBlock itens={fill3} />
           <FunctionBlock functionName="fill" itens={fillParam3} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={fillResult3} />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

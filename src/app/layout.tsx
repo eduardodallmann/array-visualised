@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <head>
         <link rel="icon" href="/favicon.svg" />
         <link

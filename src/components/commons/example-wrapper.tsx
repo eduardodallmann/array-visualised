@@ -10,6 +10,7 @@ import {
 
 import { useModal } from '~/context/modal';
 
+import { Arrow } from './icons/arrow';
 import { RunIcon } from './icons/run';
 
 export const ItemContext = createContext<{
@@ -29,7 +30,7 @@ export function ExampleWrapper({
 }: {
   explanation?: string;
   code?: string;
-  children: [ReactNode, ReactNode, ReactNode];
+  children: [ReactNode, ReactNode] | [ReactNode, ReactNode, ReactNode];
 }) {
   const [item, setItem] = useState<string>('');
   const removeItem = () => setItem('');
@@ -44,12 +45,14 @@ export function ExampleWrapper({
             {explanation}
           </div>
         )}
-        <div className="flex justify-between">
+        <div className="flex justify-between md:flex-row flex-col">
           <ExampleItem size="big">{left}</ExampleItem>
           <ExampleItem size="small" className="flex items-center">
-            {center}
+            {Boolean(right) ? center : <Arrow />}
           </ExampleItem>
-          <ExampleItem className="flex items-center">{right}</ExampleItem>
+          <ExampleItem className="flex items-center">
+            {Boolean(right) ? right : center}
+          </ExampleItem>
         </div>
       </div>
     </ItemContext.Provider>
@@ -65,9 +68,9 @@ function ExampleItem({
   className?: string;
 }>) {
   const flex = {
-    small: 'flex-[0.1_0.1_0%]',
+    small: 'flex-[0.15_0.15_0%]',
     normal: 'md:flex-[0.3_0.3_0%] flex-[0.4_0.4_0%]',
-    big: 'md:flex-[0.6_0.6_0%] flex-[0.3_0.3_0%]',
+    big: 'md:flex-[0.55_0.55_0%] flex-[0.3_0.3_0%]',
   };
 
   return (

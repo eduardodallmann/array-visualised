@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { Colors } from '../commons/types';
 
 const code = `const array1 = [1, 2, 3];
@@ -27,18 +27,17 @@ shiftResult1.shift();
 
 export function Shift() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="Shift: Remove o primeiro elemento do array e retorna o item removido."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={shift1} showBreak />
+          <ArrayBlock itens={shift1} />
           <FunctionBlock functionName="shift" itens={[]} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={shiftResult1} />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

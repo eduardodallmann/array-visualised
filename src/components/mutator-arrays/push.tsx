@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
 const code = `const animais = ['porcos', 'cabras', 'ovelhas'];
@@ -40,27 +40,25 @@ pushResult2.push(...pushParam2);
 
 export function Push() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="Push: Adiciona um ou mais elementos ao final do array e retorna o novo comprimento."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={push1} showBreak />
+          <ArrayBlock itens={push1} />
           <FunctionBlock functionName="push" itens={pushParam1} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={pushResult1} />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={push2} showBreak />
+          <ArrayBlock itens={push2} />
           <FunctionBlock functionName="push" itens={pushParam2} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={pushResult2} />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

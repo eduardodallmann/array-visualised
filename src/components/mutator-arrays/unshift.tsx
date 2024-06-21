@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { Colors } from '../commons/types';
 
 const code = `const array1 = [1, 2, 3];
@@ -34,27 +34,25 @@ unshiftResult2.unshift(...unshiftParam2);
 
 export function Unshift() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="Unshift: Adiciona um ou mais elementos ao início do array e retorna o novo comprimento."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={unshift1} showBreak />
+          <ArrayBlock itens={unshift1} />
           <FunctionBlock functionName="unshift" itens={unshiftParam1} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={unshiftResult1} />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={unshift2} showBreak />
+          <ArrayBlock itens={unshift2} />
           <FunctionBlock functionName="unshift" itens={unshiftParam2} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={unshiftResult2} />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
 const code = `const array1 = ['um', 'dois', 'três'];
@@ -29,18 +29,17 @@ reverseResult1.reverse();
 
 export function Reverse() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="Reverse: Inverte a ordem dos elementos no array."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={reverse1} showBreak />
+          <ArrayBlock itens={reverse1} />
           <FunctionBlock functionName="reverse" itens={[]} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={reverseResult1} />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

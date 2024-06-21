@@ -1,8 +1,8 @@
 import { ArrayBlock } from '../commons/array-block';
 import { ArrayFunctionBlockWrapper } from '../commons/array-function-block-wrapper';
+import { ExampleContainer } from '../commons/example-container';
 import { ExampleWrapper } from '../commons/example-wrapper';
 import { FunctionBlock } from '../commons/function-block';
-import { Arrow } from '../commons/icons/arrow';
 import { Colors, type FunctionBlockType } from '../commons/types';
 
 const code = `const meses = ['Jan', 'Março', 'Abril', 'Junho'];
@@ -72,45 +72,41 @@ spliceResult4.splice(1, 1, newItem4);
 
 export function Splice() {
   return (
-    <>
+    <ExampleContainer>
       <ExampleWrapper
         explanation="Splice: Adiciona ou remove elementos de um array. O primeiro parâmetro é o índice no qual começar a alterar o array. (opcional) O segundo parâmetro indica o número de elementos do array a serem removidos a partir do índice. (opcional) Os próximos parâmetros serão inseridos no array. E retorna um array com os itens excluídos."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={splice1} showBreak />
+          <ArrayBlock itens={splice1} />
           <FunctionBlock functionName="splice" itens={spliceParam1} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={spliceResult1} />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={splice2} showBreak />
+          <ArrayBlock itens={splice2} />
           <FunctionBlock functionName="splice" itens={spliceParam2} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={spliceResult2} />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={splice3} showBreak />
+          <ArrayBlock itens={splice3} />
           <FunctionBlock functionName="splice" itens={spliceParam3} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={spliceResult3} />
       </ExampleWrapper>
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={splice4} showBreak />
+          <ArrayBlock itens={splice4} />
           <FunctionBlock functionName="splice" itens={spliceParam4} />
         </ArrayFunctionBlockWrapper>
-        <Arrow />
         <ArrayBlock itens={spliceResult4} />
       </ExampleWrapper>
-    </>
+    </ExampleContainer>
   );
 }

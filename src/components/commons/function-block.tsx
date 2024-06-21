@@ -11,7 +11,7 @@ export function FunctionBlock({
   itens: Array<FunctionBlockType>;
 }) {
   return (
-    <div className="flex flex-row items-center text-white lg:text-3xl md:text-xl text-lg font-medium md:ml-0 ml-4">
+    <div className="flex flex-row items-center text-white lg:text-3xl md:text-xl text-2xl font-medium">
       .{functionName}(
       {itens.map((item, index) => (
         <Fragment key={index}>
