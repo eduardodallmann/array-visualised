@@ -53,7 +53,7 @@ export function Join() {
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={join2} />
+          <ArrayBlock itens={join2} showComma />
           <FunctionBlock functionName="join" itens={joinParam2} />
         </ArrayFunctionBlockWrapper>
         <ResultBlock>{concatResult2}</ResultBlock>
@@ -61,7 +61,7 @@ export function Join() {
 
       <ExampleWrapper>
         <ArrayFunctionBlockWrapper>
-          <ArrayBlock itens={join3} />
+          <ArrayBlock itens={join3} showComma />
           <FunctionBlock functionName="join" itens={joinParam3} />
         </ArrayFunctionBlockWrapper>
         <ResultBlock>{concatResult3}</ResultBlock>
