@@ -22,7 +22,7 @@ const every1: Array<FunctionBlockType> = [
 const everyParam1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.green },
 ];
-const concatResult1 = every1
+const everyResult1 = every1
   .every((item) => item.color === Colors.green)
   .toString();
 
@@ -49,7 +49,7 @@ export function Every() {
           <ArrayBlock itens={every1} />
           <FunctionBlock functionName="every" itens={everyParam1} />
         </ArrayFunctionBlockWrapper>
-        <ResultBlock>{concatResult1}</ResultBlock>
+        <ResultBlock>{everyResult1}</ResultBlock>
       </ExampleWrapper>
 
       <ExampleWrapper>
