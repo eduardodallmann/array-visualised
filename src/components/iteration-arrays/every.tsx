@@ -42,7 +42,7 @@ export function Every() {
   return (
     <ExampleContainer>
       <ExampleWrapper
-        explanation="Every: testa se todos os elementos do array passam pelo teste implementado pela função fornecida. Este método retorna um valor booleano."
+        explanation="Every: Testa se todos os elementos no array passam no teste implementado pela função fornecida."
         code={code}
       >
         <ArrayFunctionBlockWrapper>
