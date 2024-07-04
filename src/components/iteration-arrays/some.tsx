@@ -20,9 +20,7 @@ const some1: Array<FunctionBlockType> = [
   { id: crypto.randomUUID(), color: Colors.blue },
   { id: crypto.randomUUID(), color: Colors.green },
 ];
-const somaParam1: Array<FunctionBlockType> = [
-  { id: crypto.randomUUID(), color: Colors.green },
-];
+const somaParam1: Array<FunctionBlockType> = [some1[2]];
 const someResult1 = some1
   .some((item) => item.color === Colors.green)
   .toString();

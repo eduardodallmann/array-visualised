@@ -34,7 +34,7 @@ export function FindIndex() {
       >
         <ArrayFunctionBlockWrapper>
           <ArrayBlock itens={findIndex1} />
-          <FunctionBlock functionName="indexOf" itens={findIndexParam1} />
+          <FunctionBlock functionName="findIndex" itens={findIndexParam1} />
         </ArrayFunctionBlockWrapper>
         <ResultBlock>{findIndexResult1}</ResultBlock>
       </ExampleWrapper>
