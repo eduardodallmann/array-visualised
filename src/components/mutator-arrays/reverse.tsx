@@ -7,15 +7,15 @@ import { Colors, type FunctionBlockType } from '../commons/types';
 
 const code = `const array1 = ['um', 'dois', 'três'];
 console.log('array1:', array1);
-// Saída esperada: "array1:" Array ["um", "dois", "três"]
+// Saída esperada: array1: um, dois, três
 
 const reversed = array1.reverse();
 console.log('reversed:', reversed);
-// Saída esperada: "reversed:" Array ["três", "dois", "um"]
+// Saída esperada: reversed: três, dois, um
 
 // Cuidado: reverse é destrutivo -- ele muda o array original.
 console.log('array1:', array1);
-// Saída esperada: "array1:" Array ["três", "dois", "um"]
+// Saída esperada: array1: três, dois, um
 `;
 
 const reverse1: Array<FunctionBlockType> = [
